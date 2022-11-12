@@ -1,3 +1,3 @@
-# go-template
+# bluetooth
 
 template for go libraries

@@ -3,12 +3,14 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"github.com/jamiekieranmartin/bluetooth"
 )
 
 const cliVersion = "0.0.1"
 
 const helpMessage = `
-go-template v%s
+bluetooth v%s
 
 `
 
@@ -26,10 +28,12 @@ func main() {
 
 	// if asked for version, disregard everything else
 	if *version {
-		fmt.Printf("go-template v%s\n", cliVersion)
+		fmt.Printf("bluetooth v%s\n", cliVersion)
 		return
 	} else if *help {
 		flag.Usage()
 		return
 	}
+
+	bluetooth.StartScanning()
 }
